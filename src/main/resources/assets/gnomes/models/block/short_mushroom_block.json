@@ -1,0 +1,7 @@
+{
+  "parent" : "block/cube_all",
+  "textures": {
+      "all": "gnomes:block/short_mushroom_block"
+  }
+
+}
