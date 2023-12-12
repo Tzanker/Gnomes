@@ -1,5 +1,6 @@
 {
 
   "item.gnomes.short_mushroom": "Short Mushroom",
-  "block.gnomes.short_mushroom_block" : "Short Mushroom Block"
+  "block.gnomes.short_mushroom_block" : "Short Mushroom Block",
+  "itemGroup.gnomestab": "Gnomes"
 }

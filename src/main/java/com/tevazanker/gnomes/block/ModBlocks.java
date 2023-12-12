@@ -1,6 +1,7 @@
 package com.tevazanker.gnomes.block;
 
 import com.tevazanker.gnomes.Gnomes;
+import com.tevazanker.gnomes.item.ModCreativeModeTab;
 import com.tevazanker.gnomes.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -22,9 +23,11 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SHORT_MUSHROOM_BLOCK = registerBlock("short_mushroom_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.PLANT).strength(9f)),
-            CreativeModeTab.TAB_BREWING);
+            ModCreativeModeTab.GNOMES_TAB);
 
 
+
+    //Used to register a block and its associated item
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){
         RegistryObject<T> toReturn = BLOCKS.register(name,block);
         registerBlockItem(name,toReturn,tab);

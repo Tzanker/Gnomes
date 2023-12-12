@@ -13,7 +13,7 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, Gnomes.MOD_ID);
 
     public static final RegistryObject<Item> SHORT_MUSHROOM = ITEMS.register("short_mushroom",
-            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_BREWING)));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.GNOMES_TAB)));
 
 
     public static void  register(IEventBus eventBus) {
