@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model":  "gnomes:block/short_mushroom_block"}
+    "": {
+      "model": "gnomes:block/short_mushroom_block"
+    }
   }
 }

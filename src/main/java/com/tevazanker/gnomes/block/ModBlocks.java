@@ -7,6 +7,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.MushroomBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,21 +27,31 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.PLANT).strength(9f)),
             ModCreativeModeTab.GNOMES_TAB);
 
+    public static final RegistryObject<Block> SHORT_MUSHROOM = registerBlock("short_mushroom",
+            () -> new Block(BlockBehaviour.Properties.of(Material.PLANT)
+                    .instabreak()
+                    .sound(SoundType.GRASS)
+                    .noCollission()
+                    .lightLevel((state) -> 1)
+                    .randomTicks()
+                    .speedFactor(0.7F)
+                    .jumpFactor(0.4F)),
+            ModCreativeModeTab.GNOMES_TAB);
 
 
     //Used to register a block and its associated item
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){
-        RegistryObject<T> toReturn = BLOCKS.register(name,block);
-        registerBlockItem(name,toReturn,tab);
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn, tab);
         return toReturn;
     }
 
-    private static <T extends  Block>RegistryObject<Item> registerBlockItem(String name,
+    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name,
                                                                             RegistryObject<T> block, CreativeModeTab tab) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
 
-    public static void register(IEventBus eventBus){
+    public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
 }
