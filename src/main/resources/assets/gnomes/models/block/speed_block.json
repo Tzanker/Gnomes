@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "gnomes:block/speed_block"
+  }
+}

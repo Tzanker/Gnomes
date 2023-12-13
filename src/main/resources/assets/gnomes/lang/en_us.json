@@ -1,6 +1,13 @@
 {
 
+  "item.gnomes.dowsing_rod": "Dowsing Rod",
+
   "block.gnomes.short_mushroom": "Short Mushroom",
   "block.gnomes.short_mushroom_block" : "Short Mushroom Block",
-  "itemGroup.gnomestab": "Gnomes"
+
+
+  "itemGroup.gnomestab": "Gnomes",
+
+
+  "item.tutorialmod.dowsing_rod.no_valuables": "No Valuable Blocks Found"
 }

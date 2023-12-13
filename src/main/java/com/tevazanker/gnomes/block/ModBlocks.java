@@ -1,6 +1,7 @@
 package com.tevazanker.gnomes.block;
 
 import com.tevazanker.gnomes.Gnomes;
+import com.tevazanker.gnomes.block.custom.SpeedyBlock;
 import com.tevazanker.gnomes.item.ModCreativeModeTab;
 import com.tevazanker.gnomes.item.ModItems;
 import net.minecraft.data.worldgen.features.TreeFeatures;
@@ -26,7 +27,7 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, Gnomes.MOD_ID);
 
     public static final RegistryObject<Block> SHORT_MUSHROOM_BLOCK = registerBlock("short_mushroom_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.PLANT).strength(9f)),
+            () -> new Block(BlockBehaviour.Properties.of(Material.PLANT).strength(0)),
             ModCreativeModeTab.GNOMES_TAB);
     public static final RegistryObject<Block> SHORT_MUSHROOM = registerBlock("short_mushroom",
             () -> new MushroomBlock(BlockBehaviour.Properties.of(Material.PLANT)
@@ -42,6 +43,9 @@ public class ModBlocks {
                     }),
             ModCreativeModeTab.GNOMES_TAB);
 
+    public static final RegistryObject<Block> SPEED_BLOCK = registerBlock("speed_block",
+            () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.PLANT).strength(4f)),
+            ModCreativeModeTab.GNOMES_TAB);
 
     //Used to register a block and its associated item
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
