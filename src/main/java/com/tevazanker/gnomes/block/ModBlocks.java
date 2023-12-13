@@ -8,10 +8,7 @@ import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.MushroomBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -30,7 +27,7 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.PLANT).strength(0)),
             ModCreativeModeTab.GNOMES_TAB);
     public static final RegistryObject<Block> SHORT_MUSHROOM = registerBlock("short_mushroom",
-            () -> new MushroomBlock(BlockBehaviour.Properties.of(Material.PLANT)
+            () -> new MushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM)
                     .noCollission()
                     .randomTicks()
                     .instabreak()
@@ -42,6 +39,16 @@ public class ModBlocks {
                         return TreeFeatures.HUGE_RED_MUSHROOM;
                     }),
             ModCreativeModeTab.GNOMES_TAB);
+    public static final RegistryObject<Block> POTTED_SHORT_MUSHROOM =
+            registerBlockWithoutItem("potted_short_mushroom",
+                () -> new FlowerPotBlock(null, ModBlocks.SHORT_MUSHROOM
+                        ,BlockBehaviour.Properties.copy(Blocks.POTTED_RED_MUSHROOM)
+                        .noOcclusion()),
+                ModCreativeModeTab.GNOMES_TAB);
+
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutItem(String name, Supplier<T> block, CreativeModeTab tab) {
+        return BLOCKS.register(name, block);
+    }
 
     public static final RegistryObject<Block> SPEED_BLOCK = registerBlock("speed_block",
             () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.PLANT).strength(4f)),

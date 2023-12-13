@@ -17,7 +17,10 @@ public class ModItems {
             () -> new DowsingRodItem(new Item.Properties()
                     .tab(ModCreativeModeTab.GNOMES_TAB)
                     .durability(16)));
-
+    public static final RegistryObject<Item> SHORT_MUSHROOM_STEW = ITEMS.register("short_mushroom_stew",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.GNOMES_TAB)
+                    .food(GnomeFoods.SHORT_MUSHROOM_STEW)));
 
     public static void  register(IEventBus eventBus) {
         ITEMS.register(eventBus);

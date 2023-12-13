@@ -1,13 +1,18 @@
 {
 
   "item.gnomes.dowsing_rod": "Dowsing Rod",
+  "item.gnomes.short_mushroom_stew" : "Short Mushroom Stew",
 
+  "block.gnomes.speed_block" : "Speed Block",
   "block.gnomes.short_mushroom": "Short Mushroom",
   "block.gnomes.short_mushroom_block" : "Short Mushroom Block",
-
+  "block.gnomes.potted_short_mushroom" : "Potted Short Mushroom",
 
   "itemGroup.gnomestab": "Gnomes",
 
 
   "item.tutorialmod.dowsing_rod.no_valuables": "No Valuable Blocks Found"
+
+
+
 }
