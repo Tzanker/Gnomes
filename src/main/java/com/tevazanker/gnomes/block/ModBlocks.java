@@ -3,10 +3,12 @@ package com.tevazanker.gnomes.block;
 import com.tevazanker.gnomes.Gnomes;
 import com.tevazanker.gnomes.item.ModCreativeModeTab;
 import com.tevazanker.gnomes.item.ModItems;
+import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.MushroomBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -26,16 +28,18 @@ public class ModBlocks {
     public static final RegistryObject<Block> SHORT_MUSHROOM_BLOCK = registerBlock("short_mushroom_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.PLANT).strength(9f)),
             ModCreativeModeTab.GNOMES_TAB);
-
     public static final RegistryObject<Block> SHORT_MUSHROOM = registerBlock("short_mushroom",
-            () -> new Block(BlockBehaviour.Properties.of(Material.PLANT)
+            () -> new MushroomBlock(BlockBehaviour.Properties.of(Material.PLANT)
+                    .noCollission()
+                    .randomTicks()
                     .instabreak()
                     .sound(SoundType.GRASS)
-                    .noCollission()
-                    .lightLevel((state) -> 1)
-                    .randomTicks()
                     .speedFactor(0.7F)
-                    .jumpFactor(0.4F)),
+                    .jumpFactor(0.4F)
+                    .noOcclusion(),
+                    () -> {
+                        return TreeFeatures.HUGE_RED_MUSHROOM;
+                    }),
             ModCreativeModeTab.GNOMES_TAB);
 
 

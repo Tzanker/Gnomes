@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "gnomes:short_mushroom"
+    }
+  },
+  "result": {
+    "item": "gnomes:short_mushroom_block"
+  }
+}

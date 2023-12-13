@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gnomes:short_mushroom_block"
+    }
+  ],
+  "result": {
+    "item": "gnomes:short_mushroom",
+    "count": 9
+  }
+}
