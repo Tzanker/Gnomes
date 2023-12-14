@@ -2,6 +2,7 @@ package com.tevazanker.gnomes;
 
 import com.mojang.logging.LogUtils;
 import com.tevazanker.gnomes.block.ModBlocks;
+import com.tevazanker.gnomes.effect.ModEffects;
 import com.tevazanker.gnomes.item.ModItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -31,6 +32,10 @@ public class Gnomes
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
 
+
+        ModEffects.register(eventBus);
+
+
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
 
@@ -40,6 +45,7 @@ public class Gnomes
     private void clientSetup(final FMLClientSetupEvent event){
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SHORT_MUSHROOM.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_SHORT_MUSHROOM.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLOWING_MUSHROOM.get(), RenderType.cutout());
     }
 
     private void setup(final FMLCommonSetupEvent event)

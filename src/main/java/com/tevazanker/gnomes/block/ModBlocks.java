@@ -1,6 +1,7 @@
 package com.tevazanker.gnomes.block;
 
 import com.tevazanker.gnomes.Gnomes;
+import com.tevazanker.gnomes.block.custom.GlowingMushroom;
 import com.tevazanker.gnomes.block.custom.SpeedyBlock;
 import com.tevazanker.gnomes.item.ModCreativeModeTab;
 import com.tevazanker.gnomes.item.ModItems;
@@ -39,6 +40,15 @@ public class ModBlocks {
                         return TreeFeatures.HUGE_RED_MUSHROOM;
                     }),
             ModCreativeModeTab.GNOMES_TAB);
+    public static final RegistryObject<Block> GLOWING_MUSHROOM = registerBlock("glowing_mushroom",
+            () -> new GlowingMushroom(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM)
+                    .strength(0)
+                    .lightLevel((state) -> state.getValue(GlowingMushroom.GLOWING)? 15 : 0),
+                    () -> {
+                        return TreeFeatures.HUGE_RED_MUSHROOM;
+                    }),
+            ModCreativeModeTab.GNOMES_TAB);
+
     public static final RegistryObject<Block> POTTED_SHORT_MUSHROOM =
             registerBlockWithoutItem("potted_short_mushroom",
                 () -> new FlowerPotBlock(null, ModBlocks.SHORT_MUSHROOM

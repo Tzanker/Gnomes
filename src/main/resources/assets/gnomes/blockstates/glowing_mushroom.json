@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "glowing=false": {
+      "model":"gnomes:block/glowing_mushroom_off"
+    },
+    "glowing=true": {
+      "model":"gnomes:block/glowing_mushroom_on"
+    }
+  }
+}

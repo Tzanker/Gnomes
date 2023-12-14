@@ -7,12 +7,14 @@
   "block.gnomes.short_mushroom": "Short Mushroom",
   "block.gnomes.short_mushroom_block" : "Short Mushroom Block",
   "block.gnomes.potted_short_mushroom" : "Potted Short Mushroom",
+  "block.gnomes.glowing_mushroom": "Short Mushroom",
+
 
   "itemGroup.gnomestab": "Gnomes",
 
 
-  "item.tutorialmod.dowsing_rod.no_valuables": "No Valuable Blocks Found"
+  "item.tutorialmod.dowsing_rod.no_valuables": "No Valuable Blocks Found",
 
-
+  "effect.gnomes.shrink" : "Shrink"
 
 }
