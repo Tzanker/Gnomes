@@ -2,15 +2,20 @@
 
   "item.gnomes.dowsing_rod": "Dowsing Rod",
   "item.gnomes.short_mushroom_stew" : "Short Mushroom Stew",
+  "item.gnomes.sceptre_of_ecognomics": "Sceptre Of Ecognomics",
+  "item.gnomes.gnome_spawn_egg": "Gnome Spawn Egg",
+
 
   "block.gnomes.speed_block" : "Speed Block",
   "block.gnomes.short_mushroom": "Short Mushroom",
   "block.gnomes.short_mushroom_block" : "Short Mushroom Block",
   "block.gnomes.potted_short_mushroom" : "Potted Short Mushroom",
-  "block.gnomes.glowing_mushroom": "Short Mushroom",
-
+  "block.gnomes.glowing_mushroom": "Glowing Mushroom",
+  "block.gnomes.gnomic_stump": "Gnomic Stump",
 
   "itemGroup.gnomestab": "Gnomes",
+
+
 
 
   "item.tutorialmod.dowsing_rod.no_valuables": "No Valuable Blocks Found",

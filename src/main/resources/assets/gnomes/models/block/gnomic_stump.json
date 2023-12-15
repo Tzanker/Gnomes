@@ -1,0 +1,118 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "gnomes:block/gnomic_stump_extension2",
+		"2": "gnomes:block/gnomic_stump_extension1",
+		"3": "gnomes:block/gnomic_stump_base2",
+		"4": "gnomes:block/gnomic_stump_base1",
+		"5": "gnomes:block/gnomic_stump_main",
+		"particle": "gnomes:block/gnomic_stump_main"
+	},
+	"elements": [
+		{
+			"name": "Main",
+			"from": [3, 0, 3],
+			"to": [13, 15.9, 13],
+			"faces": {
+				"north": {"uv": [0, 0, 5, 8], "texture": "#5"},
+				"east": {"uv": [5, 0, 10, 8], "texture": "#5"},
+				"south": {"uv": [0, 8, 5, 16], "texture": "#5"},
+				"west": {"uv": [5, 8, 10, 16], "texture": "#5"},
+				"up": {"uv": [15, 5, 10, 0], "texture": "#5"},
+				"down": {"uv": [15, 5, 10, 10], "texture": "#5"}
+			}
+		},
+		{
+			"name": "Extension2",
+			"from": [3.8, -0.2, 0.8],
+			"to": [12.2, 16.2, 15.2],
+			"faces": {
+				"north": {"uv": [0, 8, 4, 16], "texture": "#1"},
+				"east": {"uv": [0, 0, 7, 8], "texture": "#1"},
+				"south": {"uv": [4, 8, 8, 16], "texture": "#1"},
+				"west": {"uv": [7, 0, 14, 8], "texture": "#1"},
+				"up": {"uv": [12, 15, 8, 8], "texture": "#1"},
+				"down": {"uv": [16, 8, 12, 15], "texture": "#1"}
+			}
+		},
+		{
+			"name": "Extension1",
+			"from": [1, 0, 4],
+			"to": [15, 16, 12],
+			"faces": {
+				"north": {"uv": [0, 0, 7, 8], "texture": "#2"},
+				"east": {"uv": [0, 8, 4, 16], "texture": "#2"},
+				"south": {"uv": [7, 0, 14, 8], "texture": "#2"},
+				"west": {"uv": [4, 8, 8, 16], "texture": "#2"},
+				"up": {"uv": [15, 12, 8, 8], "texture": "#2"},
+				"down": {"uv": [15, 12, 8, 16], "texture": "#2"}
+			}
+		},
+		{
+			"name": "Base2",
+			"from": [0.9, -0.1, -0.1],
+			"to": [15.1, 7.1, 16.1],
+			"faces": {
+				"north": {"uv": [0, 11.5, 7, 15], "texture": "#3"},
+				"east": {"uv": [0, 8, 8, 11.5], "texture": "#3"},
+				"south": {"uv": [7, 11.5, 14, 15], "texture": "#3"},
+				"west": {"uv": [8, 8, 16, 11.5], "texture": "#3"},
+				"up": {"uv": [7, 8, 0, 0], "texture": "#3"},
+				"down": {"uv": [14, 0, 7, 8], "texture": "#3"}
+			}
+		},
+		{
+			"name": "Base1",
+			"from": [0, 0, 1],
+			"to": [16, 5, 15],
+			"faces": {
+				"north": {"uv": [8, 0, 16, 2.5], "texture": "#4"},
+				"east": {"uv": [8, 5, 15, 7.5], "texture": "#4"},
+				"south": {"uv": [8, 2.5, 16, 5], "texture": "#4"},
+				"west": {"uv": [8, 7.5, 15, 10], "texture": "#4"},
+				"up": {"uv": [8, 7, 0, 0], "texture": "#4"},
+				"down": {"uv": [8, 7, 0, 14], "texture": "#4"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"ground": {
+			"translation": [0, 0.5, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [0, 26.25, 29.5],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"head": {
+			"translation": [0, 9.5, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "Main",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0, 1, 2]
+		},
+		{
+			"name": "group",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [3, 4]
+		}
+	]
+}

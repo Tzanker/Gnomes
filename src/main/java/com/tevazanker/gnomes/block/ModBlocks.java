@@ -1,7 +1,8 @@
 package com.tevazanker.gnomes.block;
 
 import com.tevazanker.gnomes.Gnomes;
-import com.tevazanker.gnomes.block.custom.GlowingMushroom;
+import com.tevazanker.gnomes.block.custom.GlowingMushroomBlock;
+import com.tevazanker.gnomes.block.custom.GnomicStumpBlock;
 import com.tevazanker.gnomes.block.custom.SpeedyBlock;
 import com.tevazanker.gnomes.item.ModCreativeModeTab;
 import com.tevazanker.gnomes.item.ModItems;
@@ -41,9 +42,9 @@ public class ModBlocks {
                     }),
             ModCreativeModeTab.GNOMES_TAB);
     public static final RegistryObject<Block> GLOWING_MUSHROOM = registerBlock("glowing_mushroom",
-            () -> new GlowingMushroom(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM)
+            () -> new GlowingMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM)
                     .strength(0)
-                    .lightLevel((state) -> state.getValue(GlowingMushroom.GLOWING)? 15 : 0),
+                    .lightLevel((state) -> state.getValue(GlowingMushroomBlock.GLOWING)? 15 : 0),
                     () -> {
                         return TreeFeatures.HUGE_RED_MUSHROOM;
                     }),
@@ -63,7 +64,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> SPEED_BLOCK = registerBlock("speed_block",
             () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.PLANT).strength(4f)),
             ModCreativeModeTab.GNOMES_TAB);
-
+    public static final RegistryObject<Block> GNOMIC_STUMP = registerBlock("gnomic_stump",
+            () -> new GnomicStumpBlock(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(4f)
+                    .noOcclusion()
+                    ),
+            ModCreativeModeTab.GNOMES_TAB);
     //Used to register a block and its associated item
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

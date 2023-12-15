@@ -19,10 +19,10 @@ import net.minecraft.world.phys.BlockHitResult;
 import java.util.Random;
 import java.util.function.Supplier;
 
-public class GlowingMushroom extends MushroomBlock {
+public class GlowingMushroomBlock extends MushroomBlock {
 
     public static final BooleanProperty GLOWING = BooleanProperty.create("glowing");
-    public GlowingMushroom(Properties pProperties, Supplier<Holder<? extends ConfiguredFeature<?, ?>>> pFeatureSupplier) {
+    public GlowingMushroomBlock(Properties pProperties, Supplier<Holder<? extends ConfiguredFeature<?, ?>>> pFeatureSupplier) {
         super(pProperties, pFeatureSupplier);
     }
 

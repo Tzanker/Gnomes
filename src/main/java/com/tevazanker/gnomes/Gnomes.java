@@ -3,9 +3,13 @@ package com.tevazanker.gnomes;
 import com.mojang.logging.LogUtils;
 import com.tevazanker.gnomes.block.ModBlocks;
 import com.tevazanker.gnomes.effect.ModEffects;
+import com.tevazanker.gnomes.entity.ModEntityTypes;
+import com.tevazanker.gnomes.entity.client.GnomeRenderer;
 import com.tevazanker.gnomes.item.ModItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.MinecraftForge;
@@ -15,6 +19,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import software.bernie.geckolib3.GeckoLib;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Gnomes.MOD_ID)
@@ -35,9 +40,12 @@ public class Gnomes
 
         ModEffects.register(eventBus);
 
+        ModEntityTypes.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
+
+        GeckoLib.initialize();
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -46,6 +54,8 @@ public class Gnomes
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SHORT_MUSHROOM.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_SHORT_MUSHROOM.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLOWING_MUSHROOM.get(), RenderType.cutout());
+
+        EntityRenderers.register(ModEntityTypes.GNOME.get(), GnomeRenderer::new);
     }
 
     private void setup(final FMLCommonSetupEvent event)
